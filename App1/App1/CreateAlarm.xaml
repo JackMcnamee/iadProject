@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.CreateAlarm">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Maroon">
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
+
+            <Label Text="Time"
+                   HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
+
+            <Label Text="Day Month Year"
+                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+
+            <Label Text="Alarm Sound"
+                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+
+            <Label Text="Vibration"
+                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+
+            <Label Text="Name: "
+                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+
+            <Button Text="Save Alarm" x:Name="btnSaveAlarm"
+                    Clicked="btnSaveAlarm_Clicked"
+                    HorizontalOptions="CenterAndExpand" />
+
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

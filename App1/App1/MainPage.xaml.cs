@@ -9,9 +9,18 @@ namespace App1
 {
     public partial class MainPage : ContentPage
     {
+
         public MainPage()
         {
             InitializeComponent();
         }
+
+        private void btnCreateAlarm_Clicked(object sender, EventArgs e)
+        {
+            // opens CreateAlarm page
+            Navigation.PushModalAsync(new CreateAlarm());
+
+        }
     }
 }
+

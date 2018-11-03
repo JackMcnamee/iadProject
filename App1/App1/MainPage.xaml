@@ -1,14 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App1"
+             xmlns:local="clr-namespace:App2"
              x:Class="App1.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="Maroon">
+        <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
+
+        <Label Text="Welcome to Math Alarm" 
+               HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+        <Button x:Name="btnCreateAlarm" Text="Create Alarm"
+                Clicked="btnCreateAlarm_Clicked"
+                HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+
+        <Label Text=" Created Alarms"
+               HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
+
     </StackLayout>
 
 </ContentPage>
+
