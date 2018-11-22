@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MathsProblems"
+             BackgroundColor="Maroon">
+    <ContentPage.Content>
+        <Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Maths Quiz" Grid.Row="0" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                   TextColor="Black" Grid.ColumnSpan="4" />
+            <Button x:Name="plusLeftLabel" Text = "?" Grid.Row="0" Grid.Column="0" />
+            <Button Text = "+" Grid.Row="0" Grid.Column="1" />
+            <Button x:Name="plusRightLabel" Text = "?" Grid.Row="0" Grid.Column="2" />
+            <Button Text = "=" Grid.Row="0" Grid.Column="3" />
+            <Entry x:Name="answer" Grid.Row="0" Grid.Column="4" Keyboard="Numeric" />
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -4,29 +4,72 @@
              x:Class="App1.CreateAlarm">
     <ContentPage.Content>
         <StackLayout BackgroundColor="Maroon">
+           
+            <!-- creates gap -->
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/> 
+
+            <!--Displays Time-->
+            <Label Text="Time" 
+                   HorizontalOptions="Center" VerticalOptions="Start"/>
+            <TimePicker x:Name="timePicker" PropertyChanged="OnTimePickerPropertyChanged"
+                        HorizontalOptions="Center"/>
+
+            <!-- creates gap -->
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/> 
+            
+            <!--Displays Date-->
+            <Label Text="Day Month Year"
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <DatePicker x:Name="datePicker"
+                        HorizontalOptions="Center"/>
+
+            <!-- creates gap -->
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
+            
+            <!--Allows user to choose alarm sound on/off-->
+            <Label Text="Alarm Sound"
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Switch x:Name="switchAlarmSound" HorizontalOptions="Center" />
+
+            <!-- creates gap -->
             <BoxView HeightRequest="10" 
                  HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
                  Color="Maroon"/>
 
-            <Label Text="Time"
-                   HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
-
-            <Label Text="Day Month Year"
-                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
-
-            <Label Text="Alarm Sound"
-                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
-
+            <!--Allows user to choose vibration on/off-->
             <Label Text="Vibration"
-                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Switch x:Name="switchVibration" HorizontalOptions="Center" />
+            
+            <!-- creates gap -->
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
 
+            <!--Enter name of alarm-->
             <Label Text="Name: "
-                   HorizontalOptions="Start" VerticalOptions="StartAndExpand" />
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Entry x:Name="nameAlarm"
+                   Placeholder="Enter Name of Alarm" HorizontalOptions="Center"/>
 
-            <Button Text="Save Alarm" x:Name="btnSaveAlarm"
-                    Clicked="btnSaveAlarm_Clicked"
-                    HorizontalOptions="CenterAndExpand" />
+            <!-- creates gap -->
+            <BoxView HeightRequest="10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
+                 Color="Maroon"/>
 
+            <!--Saves created alarm/ brings user back to home screen where created alarm is displayed-->
+            <Label Text="Save Alarm "
+                   HorizontalOptions="EndAndExpand" />
+            <Switch  x:Name="switchSaveAlarm" Toggled="OnSwitchToggled"
+                    HorizontalOptions="EndAndExpand" />
+
+            <!-- creates gap -->
             <BoxView HeightRequest="10" 
                  HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
                  Color="Maroon"/>

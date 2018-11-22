@@ -1,21 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:App2"
+             xmlns:local="clr-namespace:App1"
              x:Class="App1.MainPage">
 
     <StackLayout BackgroundColor="Maroon">
+        
+        <!-- creates gap -->
         <BoxView HeightRequest="10" 
                  HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
                  Color="Maroon"/>
-
+    
+        <!--Title-->
         <Label Text="Welcome to Math Alarm" 
                HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
+        <!--Brings user to a page to create alarm-->
         <Button x:Name="btnCreateAlarm" Text="Create Alarm"
                 Clicked="btnCreateAlarm_Clicked"
                 HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
 
+        <!--Displays users created alarms-->
         <Label Text=" Created Alarms"
                HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
 
