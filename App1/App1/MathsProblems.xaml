@@ -6,25 +6,27 @@
     <ContentPage.Content>
         <Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="150" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
             </Grid.ColumnDefinitions>
             <Label Text="Maths Quiz" Grid.Row="0" 
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                    TextColor="Black" Grid.ColumnSpan="4" />
-            <Button x:Name="plusLeftLabel" Text = "?" Grid.Row="0" Grid.Column="0" />
-            <Button Text = "+" Grid.Row="0" Grid.Column="1" />
-            <Button x:Name="plusRightLabel" Text = "?" Grid.Row="0" Grid.Column="2" />
-            <Button Text = "=" Grid.Row="0" Grid.Column="3" />
-            <Entry x:Name="answer" Grid.Row="0" Grid.Column="4" Keyboard="Numeric" />
+            <Label x:Name="firstNum" Text = "?" Grid.Row="1" Grid.Column="0" />
+            <Label Text = "+" Grid.Row="1" Grid.Column="1" />
+            <Label x:Name="secondNum" Text = "?" Grid.Row="1" Grid.Column="2" />
+            <Label Text = "=" Grid.Row="1" Grid.Column="3" />
+            <Entry x:Name="answer" Placeholder = "0" Grid.Row="1" Grid.Column="4" Keyboard="Numeric"/>
+            <Button x:Name="btnCheckAnswer" Text="Enter" Grid.Row="2" Grid.Column="4" 
+                    Clicked="BtnCheckAnswer_Click"/>
         </Grid>
 
     </ContentPage.Content>

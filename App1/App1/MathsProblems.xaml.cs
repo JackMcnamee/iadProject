@@ -14,52 +14,46 @@ namespace App1
 	{
         Random randomizer = new Random();
 
-        int addend1;
-        int addend2;
+        int num1;
+        int num2;
+        int sum;
 
         public MathsProblems ()
 		{
             InitializeComponent();
+            Quiz();
 		}
 
-        public void startQuiz()
+        public void Quiz()
         {
-            addend1 = randomizer.Next(51);
-            addend2 = randomizer.Next(51);
+            num1 = randomizer.Next(25);
+            num2 = randomizer.Next(25);
 
-            plusLeftLabel.Text = addend1.ToString();
-            plusRightLabel.Text = addend2.ToString();
-            
-            answer.SetValue = 0;
-
+            firstNum.Text = num1.ToString();
+            secondNum.Text = num2.ToString();
+            sum = Convert.ToInt32(answer.Text);
+        }
+        
+        bool CheckTheAnswer()
+        {
+            if (num1 + num2 == sum)
+                return true;
+            else
+                return false;
         }
 
-        private void IsAnswerRight()
+        public void BtnCheckAnswer_Click(object sender, EventArgs e)
         {
             if (CheckTheAnswer())
             {
-                DisplayAlert("Correct answers", "Well done", "Ok");
+                DisplayAlert("Correct answer", "Well done", "Ok");
                 // stopAlarm();
+                Navigation.PushModalAsync(new MainPage());
             }
             else
             {
-                DisplayAlert("Incorrect answers", "Unlucky", "Try again");
+                DisplayAlert("Incorrect answer", "Unlucky", "Try again");
             }
-
-        }
-
-        bool CheckTheAnswer()
-        {
-            if (addend1 + addend2 == answer.GetValue)
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
-               
         }
     }
 }
