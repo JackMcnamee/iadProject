@@ -18,7 +18,7 @@ namespace App1
 	{
         DateTime triggerTime;
 
-        public CreateAlarm ()
+        public CreateAlarm()
 		{
 			InitializeComponent ();
 

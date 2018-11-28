@@ -21,17 +21,6 @@
                  HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
                  Color="Maroon"/> 
             
-            <!--Displays Date-->
-            <Label Text="Day Month Year"
-                   HorizontalOptions="Center" VerticalOptions="Start" />
-            <DatePicker x:Name="datePicker"
-                        HorizontalOptions="Center"/>
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-                 Color="Maroon"/>
-            
             <!--Allows user to choose alarm sound on/off-->
             <Label Text="Alarm Sound"
                    HorizontalOptions="Center" VerticalOptions="Start" />
