@@ -2,29 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App1"
-             x:Class="App1.MainPage">
+             x:Class="App1.MainPage"
+             Title="Home Page">
+    <ContentPage.Content>
 
-    <StackLayout BackgroundColor="Maroon">
+    <Grid BackgroundColor="Maroon">
         
         <!-- creates gap -->
-        <BoxView HeightRequest="10" 
+        <BoxView HeightRequest="10"  Grid.Row="0"
                  HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
                  Color="Maroon"/>
     
         <!--Title-->
-        <Label Text="Welcome to Math Alarm" 
+        <Label Text="Welcome to Math Alarm" Grid.Row="1"
                HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
         <!--Brings user to a page to create alarm-->
         <Button x:Name="btnCreateAlarm" Text="Create Alarm"
+                Grid.Row="2"
                 Clicked="btnCreateAlarm_Clicked"
                 HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
 
         <!--Displays users created alarms-->
-        <Label Text=" Created Alarms"
+        <Label Text=" Created Alarms" Grid.Row="3"
                HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
 
-    </StackLayout>
-
+        <!--<ListView x:Name="listView" Grid.Row="4" 
+                  ItemSelected="OnListViewItemSelected" />-->
+    </Grid>
+    </ContentPage.Content>
 </ContentPage>
 

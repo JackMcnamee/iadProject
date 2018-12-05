@@ -4,29 +4,26 @@
              x:Class="App1.MathsProblems"
              BackgroundColor="Maroon">
     <ContentPage.Content>
-        <Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-                <RowDefinition Height="25" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-                <ColumnDefinition Width="150" />
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="controlGrid" RowSpacing="2" ColumnSpacing="2"
+              VerticalOptions="Center" HorizontalOptions="Center">
+            <Grid.WidthRequest>
+                <OnPlatform x:TypeArguments="x:Double" 
+                            Android="180" WinPhone="240" />
+            </Grid.WidthRequest>
+            <Grid.HeightRequest>
+                <OnPlatform x:TypeArguments="x:Double" 
+                            Android="300" WinPhone="400" />
+            </Grid.HeightRequest>
             <Label Text="Maths Quiz" Grid.Row="0" 
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                   TextColor="Black" Grid.ColumnSpan="4" />
+                   TextColor="Black" Grid.ColumnSpan="2" />
             <Label x:Name="firstNum" Text = "?" Grid.Row="1" Grid.Column="0" />
             <Label Text = "+" Grid.Row="1" Grid.Column="1" />
             <Label x:Name="secondNum" Text = "?" Grid.Row="1" Grid.Column="2" />
             <Label Text = "=" Grid.Row="1" Grid.Column="3" />
-            <Entry x:Name="answer" Placeholder = "0" Grid.Row="1" Grid.Column="4" Keyboard="Numeric"/>
-            <Button x:Name="btnCheckAnswer" Text="Enter" Grid.Row="2" Grid.Column="4" 
-                    Clicked="BtnCheckAnswer_Click"/>
+            <Entry x:Name="entryAnswer" Placeholder = "0" Grid.Row="1" Grid.Column="4" Keyboard="Numeric" />
+            <Button x:Name="checkAnswer" Text="Enter" Grid.Row="2" Grid.Column="4" 
+                    Clicked="BtnCheckAnswer_Click" />
         </Grid>
 
     </ContentPage.Content>

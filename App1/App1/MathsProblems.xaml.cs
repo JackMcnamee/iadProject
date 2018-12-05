@@ -12,48 +12,50 @@ namespace App1
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MathsProblems : ContentPage
 	{
-        Random randomizer = new Random();
 
-        int num1;
-        int num2;
-        int sum;
+        Random random = new Random();
+        int answer;
 
-        public MathsProblems ()
+        public MathsProblems()
 		{
             InitializeComponent();
-            Quiz();
-		}
 
-        public void Quiz()
+            Quiz();
+        }
+
+        void Quiz()
         {
-            num1 = randomizer.Next(25);
-            num2 = randomizer.Next(25);
+            int num1 = random.Next(25);
+            int num2 = random.Next(25);
 
             firstNum.Text = num1.ToString();
             secondNum.Text = num2.ToString();
-            sum = Convert.ToInt32(answer.Text);
+
+            answer = num1 + num2;
         }
         
-        bool CheckTheAnswer()
+        void CheckTheAnswer()
         {
-            if (num1 + num2 == sum)
-                return true;
-            else
-                return false;
+            int sum;
+
+            if (int.TryParse(entryAnswer.Text, out sum))
+            {
+                if (sum == answer)
+                {
+                    DisplayAlert("Correct answer", "Well done", "Ok");
+                    // stopAlarm();
+                    Navigation.PushModalAsync(new MainPage());
+                }
+                else
+                {
+                    DisplayAlert("Incorrect answer", "Unlucky", "Try again");
+                }
+            }
         }
 
-        public void BtnCheckAnswer_Click(object sender, EventArgs e)
+        void BtnCheckAnswer_Click(object sender, EventArgs e)
         {
-            if (CheckTheAnswer())
-            {
-                DisplayAlert("Correct answer", "Well done", "Ok");
-                // stopAlarm();
-                Navigation.PushModalAsync(new MainPage());
-            }
-            else
-            {
-                DisplayAlert("Incorrect answer", "Unlucky", "Try again");
-            }
+            CheckTheAnswer();
         }
     }
 }
