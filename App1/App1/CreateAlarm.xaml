@@ -3,68 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.CreateAlarm"
              Title="Create Alarm">
-            
+
     <ContentPage.Content>
+        <Grid BackgroundColor="Maroon">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <StackLayout BackgroundColor="Maroon">
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
+            <!--Title-->
+            <Label Text="Create Alarm" Grid.Row="0" Grid.Column="0"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
             <!--Displays Time-->
-            <Label Text="Time" 
-            HorizontalOptions="Center" VerticalOptions="Start"/>
-            <TimePicker x:Name="timePicker" PropertyChanged="OnTimePickerPropertyChanged"
-                HorizontalOptions="Center"/>
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
+            <Label Text="Time" Grid.Row="1" Grid.Column="0"
+                   HorizontalOptions="Center" VerticalOptions="Start"/>
+            <TimePicker x:Name="timePicker" 
+                        Grid.Row="2" Grid.Column="0"
+                        PropertyChanged="OnTimePickerPropertyChanged"
+                        HorizontalOptions="Center"/>
 
             <!--Allows user to choose alarm sound on/off-->
-            <Label Text="Alarm Sound"
-            HorizontalOptions="Center" VerticalOptions="Start" />
-            <Switch x:Name="switchAlarmSound" HorizontalOptions="Center" />
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
+            <Label Text="Alarm Sound" 
+                   Grid.Row="3" Grid.Column="0"
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Switch x:Name="switchAlarmSound" 
+                    Grid.Row="4" Grid.Column="0"
+                    HorizontalOptions="Center" />
 
             <!--Allows user to choose vibration on/off-->
-            <Label Text="Vibration"
-            HorizontalOptions="Center" VerticalOptions="Start" />
-            <Switch x:Name="switchVibration" HorizontalOptions="Center" />
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
+            <Label Text="Vibration" 
+                   Grid.Row="5" Grid.Column="0"
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Switch x:Name="switchVibration" Grid.Row="6" Grid.Column="0"
+                    HorizontalOptions="Center" />
 
             <!--Enter name of alarm-->
-            <Label Text="Name: "
-            HorizontalOptions="Center" VerticalOptions="Start" />
-            <Entry x:Name="nameAlarm"
-            Placeholder="Enter Name of Alarm" HorizontalOptions="Center"/>
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
+            <Label Text="Name: " 
+                   Grid.Row="7" Grid.Column="0"
+                   HorizontalOptions="Center" VerticalOptions="Start" />
+            <Entry x:Name="nameAlarm" 
+                   Grid.Row="8" Grid.Column="0"
+                   Placeholder="Enter Name of Alarm" HorizontalOptions="Center"/>
 
             <!--Saves created alarm/ brings user back to home screen where created alarm is displayed-->
-            <Label Text="Save Alarm "
-            HorizontalOptions="EndAndExpand" />
-            <Switch  x:Name="switchSaveAlarm"  Toggled="OnSwitchToggled"
-            HorizontalOptions="EndAndExpand" />
-
-            <!-- creates gap -->
-            <BoxView HeightRequest="10" 
-            HorizontalOptions="FillAndExpand" VerticalOptions="Start" 
-            Color="Maroon"/>
-        </StackLayout>
+            <Label Text="Save Alarm " 
+                   Grid.Row="9" Grid.Column="0"
+                   HorizontalOptions="Center" />
+            <Switch x:Name="switchSaveAlarm" 
+                    Grid.Row="10" Grid.Column="0"
+                    Toggled="OnSwitchToggled"
+                    HorizontalOptions="Center" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
