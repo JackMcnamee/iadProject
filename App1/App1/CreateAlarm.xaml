@@ -23,19 +23,20 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--Title-->
+            <!-- title -->
             <Label Text="Create Alarm" Grid.Row="0" Grid.Column="0"
                    HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
-            <!--Displays Time-->
+            <!-- displays time -->
             <Label Text="Time" Grid.Row="1" Grid.Column="0"
                    HorizontalOptions="Center" VerticalOptions="Start"/>
             <TimePicker x:Name="timePicker" 
                         Grid.Row="2" Grid.Column="0"
                         PropertyChanged="OnTimePickerPropertyChanged"
-                        HorizontalOptions="Center"/>
+                        HorizontalOptions="Center"
+                        Time="{Binding Time}"/>
 
-            <!--Allows user to choose alarm sound on/off-->
+            <!-- allows user to choose alarm sound on/off -->
             <Label Text="Alarm Sound" 
                    Grid.Row="3" Grid.Column="0"
                    HorizontalOptions="Center" VerticalOptions="Start" />
@@ -43,22 +44,23 @@
                     Grid.Row="4" Grid.Column="0"
                     HorizontalOptions="Center" />
 
-            <!--Allows user to choose vibration on/off-->
+            <!-- allows user to choose vibration on/off -->
             <Label Text="Vibration" 
                    Grid.Row="5" Grid.Column="0"
                    HorizontalOptions="Center" VerticalOptions="Start" />
             <Switch x:Name="switchVibration" Grid.Row="6" Grid.Column="0"
                     HorizontalOptions="Center" />
 
-            <!--Enter name of alarm-->
+            <!-- enter name of alarm -->
             <Label Text="Name: " 
                    Grid.Row="7" Grid.Column="0"
                    HorizontalOptions="Center" VerticalOptions="Start" />
             <Entry x:Name="nameAlarm" 
                    Grid.Row="8" Grid.Column="0"
-                   Placeholder="Enter Name of Alarm" HorizontalOptions="Center"/>
+                   Placeholder="Enter Name of Alarm" HorizontalOptions="Center"
+                   Text="{Binding Name}"/>
 
-            <!--Saves created alarm/ brings user back to home screen where created alarm is displayed-->
+            <!-- saves created alarm/ brings user back to home screen where created alarm is displayed -->
             <Label Text="Save Alarm " 
                    Grid.Row="9" Grid.Column="0"
                    HorizontalOptions="Center" />

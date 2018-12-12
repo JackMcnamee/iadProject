@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Navigation;
 using Xamarin.Forms;
 
 namespace App1
@@ -15,7 +16,6 @@ namespace App1
         public MainPage()
         {
             InitializeComponent();
-
             // listView.ItemsSource = list;
         }
 
@@ -23,33 +23,35 @@ namespace App1
         {
             // opens CreateAlarm page
             Navigation.PushModalAsync(new CreateAlarm());
-
         }
 
-        // Called from InfoPage. 
-        /*internal void InformationReady(Alarms info)
+        // called from CreateAlarm 
+        /*public void InformationReady(Alarms alarm)
         { 
             // If the object has already been added, replace it. 
-            int index = list.IndexOf(info);
+            int index = list.IndexOf(alarm);
             if (index != -1)
             {
-                list[index] = info;
+                list[index] = alarm;
             }
             // Otherwise, add it. 
             else
-            { list.Add(info);
+            {
+                list.Add(alarm);
             }
-        }
+        }*/
 
-        // ListView ItemSelected handler. 
-        async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
+        // allows user to select created alarm and edit 
+        /*async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             if (args.SelectedItem != null)
-            { // Deselect the item. 
+            { 
+                // Deselect the item. 
                 listView.SelectedItem = null;
-                CreateAlarm infoPage = new CreateAlarm();
-                await Navigation.PushAsync(infoPage);
-                infoPage.InitializeInfo((Alarms)args.SelectedItem); }
+                CreateAlarm createAlarm = new CreateAlarm();
+                await Navigation.PushAsync(createAlarm);
+                createAlarm.InitializeAlarm((Alarms)args.SelectedItem);
+            }
         }*/
     }
 }

@@ -17,25 +17,24 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--Title-->
-        <Label Text="Welcome to Math Alarm" 
+            <!-- title -->
+            <Label Text="Welcome to Math Alarm" 
                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
                HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
 
-        <!--Brings user to a page to create alarm-->
-        <Button x:Name="btnCreateAlarm" Text="Create Alarm"
+            <!-- brings user to a page to create alarm -->
+            <Button x:Name="btnCreateAlarm" Text="Create Alarm"
                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
                 Clicked="btnCreateAlarm_Clicked"
                 HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
 
-        <!--Displays users created alarms-->
-        <Label Text=" Created Alarms" 
+            <!-- displays users created alarms -->
+            <Label Text=" Created Alarms" 
                Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                HorizontalOptions="Start" VerticalOptions="StartAndExpand"/>
-
-        <!--<ListView x:Name="listView" Grid.Row="4" 
-                  ItemSelected="OnListViewItemSelected" />-->
-    </Grid>
+            <ListView x:Name="listView" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" 
+                  ItemSelected="OnListViewItemSelected" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
 

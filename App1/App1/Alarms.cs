@@ -4,11 +4,14 @@ using System.Text;
 
 namespace App1
 {
-    class Alarms
+    public class Alarms
     {
-        public TimeSpan Time { get; set; }
         public string Name { get; set; }
+        public TimeSpan Time { get; set; }
 
-        public override string ToString() { return String.Format("{0}", String.IsNullOrWhiteSpace(Name) ? "???" : Name); }
+        public override string ToString()
+        {
+            return String.Format("{0}", String.IsNullOrWhiteSpace(Name) ? "???" : Name);
+        }
     }
 }

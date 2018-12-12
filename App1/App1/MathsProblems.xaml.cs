@@ -12,20 +12,21 @@ namespace App1
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MathsProblems : ContentPage
 	{
-
+        // random object
         Random random = new Random();
+
         int answer;
 
         public MathsProblems()
 		{
             InitializeComponent();
-
-            Quiz();
+            GenerateRandNumber();
         }
 
-        void Quiz()
+        // creates random numbers
+        void GenerateRandNumber()
         {
-            int num1 = random.Next(25);
+            int num1 = random.Next(25); // random number from 0 - 25
             int num2 = random.Next(25);
 
             firstNum.Text = num1.ToString();
@@ -34,18 +35,20 @@ namespace App1
             answer = num1 + num2;
         }
         
+        // checks if answer by user is correct
         void CheckTheAnswer()
-        {
-            int sum;
-
-            if (int.TryParse(entryAnswer.Text, out sum))
+        { 
+            // parses entryAnswer to int
+            if (int.TryParse(entryAnswer.Text, out int sum))
             {
+                // if answer is correct
                 if (sum == answer)
                 {
                     DisplayAlert("Correct answer", "Well done", "Ok");
                     // stopAlarm();
                     Navigation.PushModalAsync(new MainPage());
                 }
+                // if answer is wrong
                 else
                 {
                     DisplayAlert("Incorrect answer", "Unlucky", "Try again");
@@ -53,6 +56,7 @@ namespace App1
             }
         }
 
+        // when button clicked, CheckTheAnswer() is called
         void BtnCheckAnswer_Click(object sender, EventArgs e)
         {
             CheckTheAnswer();

@@ -24,9 +24,13 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+
+            <!-- title -->
             <Label Text="Maths Quiz" 
                    Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="5"
                    VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            
+            <!-- "first number + second number = " -->
             <Label x:Name="firstNum" Text = "?" 
                    Grid.Row="1" Grid.Column="2"
                    VerticalOptions="Center" />
@@ -39,10 +43,14 @@
             <Label Text = "=" 
                    Grid.Row="1" Grid.Column="8" 
                    VerticalOptions="Center" />
+            
+            <!-- allows user to enter answer for problem -->
             <Entry x:Name="entryAnswer" Placeholder = "0" 
-                   Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3"
+                   Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="4"
                    VerticalOptions="Center" HorizontalOptions="Center"
                    Keyboard="Numeric" />
+            
+            <!-- button to check if answer is correct -->
             <Button x:Name="checkAnswer" Text="Enter" 
                     Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3"
                     VerticalOptions="Center" HorizontalOptions="Center"

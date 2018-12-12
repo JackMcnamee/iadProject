@@ -19,25 +19,28 @@ namespace App1
 {
     public partial class CreateAlarm : ContentPage
     {
-        Alarms info = new Alarms();
+        // alarm object
+        Alarms alarm = new Alarms();
 
+        // sets triggerTime to real time
         DateTime triggerTime;
 
         public CreateAlarm()
         {
             InitializeComponent();
 
-            Device.StartTimer(TimeSpan.FromSeconds(1), OnTimerTick);
+            Device.StartTimer(TimeSpan.FromSeconds(1), OnTimerTick); // timer runs until time picked by user
         }
 
+        // called when leaving CreateAlarm Page
         /*protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            // Set properties of Information object
-            info.Name = nameAlarm.Text;
-            info.Time = timePicker.Time;
+            // properties of Alarm
+            alarm.Name = nameAlarm.Text;
+            alarm.Time = timePicker.Time;
 
-            // Get the MainPage that invoked this page 
+            // get the HomePage that invoked this page 
             NavigationPage navPage = (NavigationPage)Application.Current.MainPage;
             IReadOnlyList<Page> navStack = navPage.Navigation.NavigationStack;
             int lastIndex = navStack.Count - 1;
@@ -47,19 +50,21 @@ namespace App1
                 homePage = navStack[lastIndex - 1] as MainPage;
             }
 
-            // Transfer Information object to MainPage 
-            homePage.InformationReady(info);
+            // transfers Alarm object to HomePage 
+            homePage.InformationReady(alarm);
         }*/
 
-        /*internal void InitializeInfo(Alarms info)
+        // sets up alarm created
+        /*public void InitializeAlarm(Alarms alarm)
         { 
             // Replace the instance
-            this.info = info;
+            this.alarm = alarm;
             // Initialize the views
-            nameAlarm.Text = info.Name ?? "";
-            timePicker.Time = info.Time;
+            nameAlarm.Text = alarm.Name ?? "";
+            timePicker.Time = alarm.Time;
         }*/
 
+        // if timer exceeds set time by user, display alert + sound and/or vibrate
         bool OnTimerTick()
         {
             if (@switchSaveAlarm.IsToggled && DateTime.Now >= triggerTime)
@@ -72,6 +77,7 @@ namespace App1
             return true;
         }
 
+        // finds time picked by user
         void OnTimePickerPropertyChanged(object obj, PropertyChangedEventArgs args)
         {
             if (args.PropertyName == "Time")
@@ -79,12 +85,14 @@ namespace App1
                 SetTriggerTime();
             }
         }
-
+        
+        // if save switch is turned on, call SetTriggerTime()
         void OnSwitchToggled(object obj, ToggledEventArgs args)
         {
             SetTriggerTime();
         }
 
+        // starts timer / when timer goes off
         void SetTriggerTime()
         {
             if (@switchSaveAlarm.IsToggled)
@@ -97,7 +105,6 @@ namespace App1
                     triggerTime += TimeSpan.FromDays(1);
                 }
             }
-        }
-                
+        } // SetTriggerTime()
     }
 }
