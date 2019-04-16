@@ -1,1 +1,2 @@
-This is my project for Internet and Mobile Application development (Alarm that provides Math Problem for user when triggered)
+Project for Internet and Mobile Application Development Semester 1 
+  (Alarm that provides Math Problem for user when triggered)
